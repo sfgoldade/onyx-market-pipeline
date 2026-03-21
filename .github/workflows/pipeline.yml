@@ -1,0 +1,81 @@
+name: Market Data Pipeline
+
+on:
+  schedule:
+    # Every Sunday at 06:00 UTC — after BLS Friday releases propagate
+    - cron: "0 6 * * 0"
+  workflow_dispatch:
+    # Allow manual runs from GitHub Actions UI
+    inputs:
+      reason:
+        description: "Reason for manual run"
+        required: false
+        default: "Manual trigger"
+
+jobs:
+  run-pipeline:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Run ETL pipeline
+        id: pipeline
+        run: |
+          cd pipeline
+          python pipeline.py
+        env:
+          PYTHONPATH: ${{ github.workspace }}
+
+      - name: Commit updated data files
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+          git add data/dashboard_payload.json
+          git add data/onyx_market.db
+          git add data/pipeline.log
+
+          # Only commit if something actually changed
+          if git diff --staged --quiet; then
+            echo "No data changes — skipping commit"
+          else
+            TIMESTAMP=$(date -u +"%Y-%m-%d %H:%M UTC")
+            git commit -m "chore: auto-update market data [${TIMESTAMP}]
+
+          Pipeline run details:
+          - Sources: FRED (5 series) + BLS (3 series)
+          - Triggered by: ${{ github.event_name }}
+          ${{ github.event.inputs.reason && format('- Reason: {0}', github.event.inputs.reason) || '' }}
+          [skip ci]"
+
+            git push
+          fi
+
+      - name: Upload pipeline log as artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: pipeline-log-${{ github.run_id }}
+          path: data/pipeline.log
+          retention-days: 30
+
+      - name: Notify on failure
+        if: failure()
+        run: |
+          echo "::error::Pipeline failed. Check the pipeline.log artifact for details."
+          echo "::error::Last 20 log lines:"
+          tail -20 data/pipeline.log || echo "Log file not found"

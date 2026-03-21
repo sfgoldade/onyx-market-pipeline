@@ -1,0 +1,20 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+.env
+venv/
+.venv/
+
+# Pipeline runtime — commit data files, not the DB lock
+data/onyx_market.db-shm
+data/onyx_market.db-wal
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
+*.swp

@@ -1,0 +1,188 @@
+<svg viewBox="0 0 900 640" xmlns="http://www.w3.org/2000/svg" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif">
+  <rect width="900" height="640" fill="#F3F1EC"/>
+
+  <!-- Title -->
+  <text x="450" y="32" text-anchor="middle" font-size="15" font-weight="700" fill="#0F0D08">Onyx Collection — Analytics Stack Data Model</text>
+  <text x="450" y="50" text-anchor="middle" font-size="10" fill="#857F76">Green = populated by this pipeline (live market data) · Gray = internal Onyx data model (target state architecture)</text>
+
+  <!-- LEGEND -->
+  <rect x="20" y="58" width="14" height="14" rx="3" fill="#DFFAF9" stroke="#07606A" stroke-width="1.5"/>
+  <text x="38" y="69" font-size="10" fill="#07606A" font-weight="600">Live — pipeline populates this</text>
+  <rect x="200" y="58" width="14" height="14" rx="3" fill="#F8F7F4" stroke="#C4BEB4" stroke-width="1.5"/>
+  <text x="218" y="69" font-size="10" fill="#857F76" font-weight="600">Target state — internal Onyx ERP data</text>
+  <rect x="430" y="58" width="14" height="14" rx="3" fill="#ECF0FE" stroke="#1E3FC0" stroke-width="1.5"/>
+  <text x="448" y="69" font-size="10" fill="#1E3FC0" font-weight="600">Joins across layers</text>
+
+  <!-- ════════════ LAYER 1: MARKET DATA (populated) ════════════ -->
+  <text x="20" y="95" font-size="11" font-weight="700" fill="#07606A" letter-spacing="0.08em">MARKET DATA LAYER  (this pipeline)</text>
+
+  <!-- raw_series -->
+  <rect x="20" y="102" width="200" height="140" rx="6" fill="#DFFAF9" stroke="#07606A" stroke-width="1.5"/>
+  <rect x="20" y="102" width="200" height="22" rx="6" fill="#07606A"/>
+  <rect x="20" y="116" width="200" height="8" fill="#07606A"/>
+  <text x="120" y="117" text-anchor="middle" font-size="11" font-weight="700" fill="white">raw_series</text>
+  <text x="30" y="135" font-size="9" fill="#07606A">🔑 id</text>
+  <text x="30" y="148" font-size="9" fill="#47423B">date — DATE</text>
+  <text x="30" y="161" font-size="9" fill="#47423B">series_id — TEXT  (HOUST, MORTGAGE30US…)</text>
+  <text x="30" y="174" font-size="9" fill="#47423B">series_name — TEXT</text>
+  <text x="30" y="187" font-size="9" fill="#47423B">value — REAL</text>
+  <text x="30" y="200" font-size="9" fill="#47423B">source — TEXT  (FRED | BLS)</text>
+  <text x="30" y="213" font-size="9" fill="#47423B">loaded_at — DATETIME</text>
+  <text x="30" y="230" font-size="9" fill="#07606A" font-style="italic">UNIQUE(date, series_id)</text>
+
+  <!-- market_context -->
+  <rect x="240" y="102" width="210" height="185" rx="6" fill="#DFFAF9" stroke="#07606A" stroke-width="1.5"/>
+  <rect x="240" y="102" width="210" height="22" rx="6" fill="#07606A"/>
+  <rect x="240" y="116" width="210" height="8" fill="#07606A"/>
+  <text x="345" y="117" text-anchor="middle" font-size="11" font-weight="700" fill="white">market_context</text>
+  <text x="250" y="135" font-size="9" fill="#07606A">🔑 date — DATE UNIQUE</text>
+  <text x="250" y="148" font-size="9" fill="#47423B">housing_starts — REAL  (FRED HOUST)</text>
+  <text x="250" y="161" font-size="9" fill="#47423B">mortgage_rate_30yr — REAL</text>
+  <text x="250" y="174" font-size="9" fill="#47423B">home_price_index — REAL</text>
+  <text x="250" y="187" font-size="9" fill="#47423B">building_materials_ppi — REAL</text>
+  <text x="250" y="200" font-size="9" fill="#47423B">res_construction_employment — REAL</text>
+  <text x="250" y="213" font-size="9" fill="#47423B">specialty_trade_employment — REAL</text>
+  <text x="250" y="226" font-size="9" fill="#857F76" font-style="italic">── derived metrics ──</text>
+  <text x="250" y="239" font-size="9" fill="#47423B">housing_health_index — REAL  (0–100)</text>
+  <text x="250" y="252" font-size="9" fill="#47423B">remodel_demand_index — REAL  (0–100)</text>
+  <text x="250" y="265" font-size="9" fill="#47423B">home_price_yoy_pct — REAL</text>
+  <text x="250" y="278" font-size="9" fill="#47423B">materials_ppi_yoy_pct — REAL</text>
+
+  <!-- market_sizing_snapshots -->
+  <rect x="470" y="102" width="200" height="165" rx="6" fill="#DFFAF9" stroke="#07606A" stroke-width="1.5"/>
+  <rect x="470" y="102" width="200" height="22" rx="6" fill="#07606A"/>
+  <rect x="470" y="116" width="200" height="8" fill="#07606A"/>
+  <text x="570" y="117" text-anchor="middle" font-size="11" font-weight="700" fill="white">market_sizing_snapshots</text>
+  <text x="480" y="135" font-size="9" fill="#07606A">🔑 id</text>
+  <text x="480" y="148" font-size="9" fill="#47423B">snapshot_date — DATE</text>
+  <text x="480" y="161" font-size="9" fill="#47423B">tam_b — REAL  ($B total addressable)</text>
+  <text x="480" y="174" font-size="9" fill="#47423B">sam_b — REAL  ($B shower enclosures)</text>
+  <text x="480" y="187" font-size="9" fill="#47423B">som_m — REAL  ($M Onyx 3-yr target)</text>
+  <text x="480" y="200" font-size="9" fill="#47423B">onyx_rev_est_mid_m — REAL</text>
+  <text x="480" y="213" font-size="9" fill="#47423B">onyx_share_of_sam_pct — REAL</text>
+  <text x="480" y="226" font-size="9" fill="#47423B">housing_health_index — REAL</text>
+  <text x="480" y="239" font-size="9" fill="#47423B">remodel_demand_index — REAL</text>
+  <text x="480" y="252" font-size="9" fill="#47423B">mortgage_rate_latest — REAL</text>
+  <text x="480" y="265" font-size="9" fill="#47423B">created_at — DATETIME</text>
+
+  <!-- pipeline_runs -->
+  <rect x="690" y="102" width="190" height="155" rx="6" fill="#DFFAF9" stroke="#07606A" stroke-width="1.5"/>
+  <rect x="690" y="102" width="190" height="22" rx="6" fill="#07606A"/>
+  <rect x="690" y="116" width="190" height="8" fill="#07606A"/>
+  <text x="785" y="117" text-anchor="middle" font-size="11" font-weight="700" fill="white">pipeline_runs</text>
+  <text x="700" y="135" font-size="9" fill="#07606A">🔑 id</text>
+  <text x="700" y="148" font-size="9" fill="#47423B">run_at — DATETIME</text>
+  <text x="700" y="161" font-size="9" fill="#47423B">status — TEXT  (success|partial|failed)</text>
+  <text x="700" y="174" font-size="9" fill="#47423B">rows_extracted — INTEGER</text>
+  <text x="700" y="187" font-size="9" fill="#47423B">rows_loaded — INTEGER</text>
+  <text x="700" y="200" font-size="9" fill="#47423B">fred_series — INTEGER</text>
+  <text x="700" y="213" font-size="9" fill="#47423B">bls_series — INTEGER</text>
+  <text x="700" y="226" font-size="9" fill="#47423B">latest_data_date — DATE</text>
+  <text x="700" y="239" font-size="9" fill="#47423B">duration_sec — REAL</text>
+  <text x="700" y="252" font-size="9" fill="#47423B">git_sha — TEXT</text>
+
+  <!-- ════════════ LAYER 2: INTERNAL ONYX (target state) ════════════ -->
+  <text x="20" y="320" font-size="11" font-weight="700" fill="#857F76" letter-spacing="0.08em">INTERNAL ONYX DATA LAYER  (target state — ERP source of truth)</text>
+
+  <!-- dealers -->
+  <rect x="20" y="328" width="200" height="175" rx="6" fill="#F8F7F4" stroke="#C4BEB4" stroke-width="1.5"/>
+  <rect x="20" y="328" width="200" height="22" rx="6" fill="#8A8278"/>
+  <rect x="20" y="342" width="200" height="8" fill="#8A8278"/>
+  <text x="120" y="343" text-anchor="middle" font-size="11" font-weight="700" fill="white">dealers  (dim)</text>
+  <text x="30" y="361" font-size="9" fill="#8A8278">🔑 dealer_id — TEXT  (DLR-0001…)</text>
+  <text x="30" y="374" font-size="9" fill="#47423B">dealer_name — TEXT</text>
+  <text x="30" y="387" font-size="9" fill="#47423B">region — TEXT</text>
+  <text x="30" y="400" font-size="9" fill="#47423B">state — TEXT</text>
+  <text x="30" y="413" font-size="9" fill="#47423B">tier — TEXT  (Gold|Silver|Bronze)</text>
+  <text x="30" y="426" font-size="9" fill="#47423B">exclusivity — INTEGER  (0|1)</text>
+  <text x="30" y="439" font-size="9" fill="#47423B">primary_rep — TEXT</text>
+  <text x="30" y="452" font-size="9" fill="#47423B">signup_date — DATE</text>
+  <text x="30" y="468" font-size="9" fill="#857F76" font-style="italic">→ joins to orders, dealer_metrics</text>
+  <text x="30" y="481" font-size="9" fill="#857F76" font-style="italic">→ region joins to market_context</text>
+  <text x="30" y="494" font-size="9" fill="#857F76" font-style="italic">→ state enables geo coverage analysis</text>
+
+  <!-- orders -->
+  <rect x="240" y="328" width="210" height="200" rx="6" fill="#F8F7F4" stroke="#C4BEB4" stroke-width="1.5"/>
+  <rect x="240" y="328" width="210" height="22" rx="6" fill="#8A8278"/>
+  <rect x="240" y="342" width="210" height="8" fill="#8A8278"/>
+  <text x="345" y="343" text-anchor="middle" font-size="11" font-weight="700" fill="white">orders  (fact)</text>
+  <text x="250" y="361" font-size="9" fill="#8A8278">🔑 order_id — TEXT</text>
+  <text x="250" y="374" font-size="9" fill="#47423B">🔗 dealer_id → dealers</text>
+  <text x="250" y="387" font-size="9" fill="#47423B">order_date — DATE</text>
+  <text x="250" y="400" font-size="9" fill="#47423B">ship_date — DATE</text>
+  <text x="250" y="413" font-size="9" fill="#47423B">product_line — TEXT</text>
+  <text x="250" y="426" font-size="9" fill="#47423B">product_sku — TEXT</text>
+  <text x="250" y="439" font-size="9" fill="#47423B">custom_flag — INTEGER  (0|1)</text>
+  <text x="250" y="452" font-size="9" fill="#47423B">units, unit_price, revenue — REAL</text>
+  <text x="250" y="465" font-size="9" fill="#47423B">cogs, gross_margin — REAL</text>
+  <text x="250" y="478" font-size="9" fill="#47423B">lead_time_days — INTEGER</text>
+  <text x="250" y="491" font-size="9" fill="#47423B">on_time — INTEGER  (0|1)</text>
+  <text x="250" y="504" font-size="9" fill="#47423B">region, state — TEXT</text>
+  <text x="250" y="517" font-size="9" fill="#857F76" font-style="italic">→ primary revenue source of truth</text>
+
+  <!-- dealer_metrics_monthly -->
+  <rect x="470" y="328" width="200" height="185" rx="6" fill="#F8F7F4" stroke="#C4BEB4" stroke-width="1.5"/>
+  <rect x="470" y="328" width="200" height="22" rx="6" fill="#8A8278"/>
+  <rect x="470" y="342" width="200" height="8" fill="#8A8278"/>
+  <text x="570" y="343" text-anchor="middle" font-size="11" font-weight="700" fill="white">dealer_metrics_monthly</text>
+  <text x="480" y="361" font-size="9" fill="#8A8278">🔑 id</text>
+  <text x="480" y="374" font-size="9" fill="#47423B">🔗 dealer_id → dealers</text>
+  <text x="480" y="387" font-size="9" fill="#47423B">month — DATE</text>
+  <text x="480" y="400" font-size="9" fill="#47423B">orders, revenue, units — REAL</text>
+  <text x="480" y="413" font-size="9" fill="#47423B">avg_order_value — REAL</text>
+  <text x="480" y="426" font-size="9" fill="#47423B">accessories_rev — REAL</text>
+  <text x="480" y="439" font-size="9" fill="#47423B">accessories_pct — REAL</text>
+  <text x="480" y="452" font-size="9" fill="#47423B">yoy_growth_pct — REAL</text>
+  <text x="480" y="465" font-size="9" fill="#47423B">at_risk_flag — INTEGER  (0|1)</text>
+  <text x="480" y="478" font-size="9" fill="#857F76" font-style="italic">→ pre-aggregated for dashboard</text>
+  <text x="480" y="491" font-size="9" fill="#857F76" font-style="italic">→ at_risk_flag drives dealer alerts</text>
+  <text x="480" y="504" font-size="9" fill="#857F76" font-style="italic">UNIQUE(dealer_id, month)</text>
+
+  <!-- market_share_tracker -->
+  <rect x="690" y="328" width="190" height="165" rx="6" fill="#F8F7F4" stroke="#C4BEB4" stroke-width="1.5"/>
+  <rect x="690" y="328" width="190" height="22" rx="6" fill="#8A8278"/>
+  <rect x="690" y="342" width="190" height="8" fill="#8A8278"/>
+  <text x="785" y="343" text-anchor="middle" font-size="11" font-weight="700" fill="white">market_share_tracker</text>
+  <text x="700" y="361" font-size="9" fill="#8A8278">🔑 id</text>
+  <text x="700" y="374" font-size="9" fill="#47423B">quarter — TEXT  (2024-Q1…)</text>
+  <text x="700" y="387" font-size="9" fill="#47423B">🔗 tam_b, sam_b → market_sizing</text>
+  <text x="700" y="400" font-size="9" fill="#47423B">onyx_rev_m — REAL  (from ERP)</text>
+  <text x="700" y="413" font-size="9" fill="#47423B">onyx_share_sam — REAL  (%)</text>
+  <text x="700" y="426" font-size="9" fill="#47423B">yoy_share_delta — REAL</text>
+  <text x="700" y="452" font-size="9" fill="#857F76" font-style="italic">→ the #1 exec KPI</text>
+  <text x="700" y="465" font-size="9" fill="#857F76" font-style="italic">→ joins market (pipeline) to</text>
+  <text x="700" y="478" font-size="9" fill="#857F76" font-style="italic">   internal revenue (ERP)</text>
+
+  <!-- ════════════ JOIN ARROWS ════════════ -->
+  <!-- raw_series → market_context (by date) -->
+  <line x1="220" y1="172" x2="240" y2="172" stroke="#1E3FC0" stroke-width="1.5" stroke-dasharray="4 2"/>
+  <text x="228" y="168" font-size="8" fill="#1E3FC0">date</text>
+
+  <!-- market_context → market_sizing (feeds) -->
+  <line x1="450" y1="200" x2="470" y2="200" stroke="#1E3FC0" stroke-width="1.5" stroke-dasharray="4 2"/>
+  <text x="456" y="196" font-size="8" fill="#1E3FC0">feeds</text>
+
+  <!-- dealers → orders -->
+  <line x1="220" y1="415" x2="240" y2="415" stroke="#C4BEB4" stroke-width="1.5" stroke-dasharray="4 2"/>
+  <text x="226" y="411" font-size="8" fill="#8A8278">dealer_id</text>
+
+  <!-- orders → dealer_metrics -->
+  <line x1="450" y1="415" x2="470" y2="415" stroke="#C4BEB4" stroke-width="1.5" stroke-dasharray="4 2"/>
+  <text x="456" y="411" font-size="8" fill="#8A8278">agg.</text>
+
+  <!-- market_sizing → market_share_tracker (cross-layer join) -->
+  <line x1="570" y1="267" x2="570" y2="295" stroke="#1E3FC0" stroke-width="1.5" stroke-dasharray="4 2"/>
+  <line x1="570" y1="295" x2="785" y2="295" stroke="#1E3FC0" stroke-width="1.5" stroke-dasharray="4 2"/>
+  <line x1="785" y1="295" x2="785" y2="328" stroke="#1E3FC0" stroke-width="1.5" stroke-dasharray="4 2"/>
+  <text x="660" y="291" font-size="8" fill="#1E3FC0">cross-layer join (market share KPI)</text>
+
+  <!-- dealers → market_context (region join) -->
+  <line x1="120" y1="494" x2="120" y2="570" stroke="#C4BEB4" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="120" y1="570" x2="345" y2="570" stroke="#C4BEB4" stroke-width="1" stroke-dasharray="3 3"/>
+  <line x1="345" y1="570" x2="345" y2="287" stroke="#C4BEB4" stroke-width="1" stroke-dasharray="3 3"/>
+  <text x="200" y="566" font-size="8" fill="#857F76">region → macro context</text>
+
+  <!-- footer -->
+  <text x="20" y="625" font-size="9" fill="#857F76">Sources: FRED (Federal Reserve St. Louis) · BLS (Bureau of Labor Statistics) · Research &amp; Markets · Grand View Research · NKBA · Buzzfile/Manta</text>
+  <text x="20" y="637" font-size="9" fill="#857F76">Prepared by Steve Goldade · Commercial Analytics · March 2026 · github.com/stevegoldade/onyx-market-pipeline</text>
+</svg>
