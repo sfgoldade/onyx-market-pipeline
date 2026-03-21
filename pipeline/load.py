@@ -177,6 +177,26 @@ def init_schema(conn: sqlite3.Connection) -> None:
         CREATE INDEX IF NOT EXISTS idx_dealer_metrics_month   ON _model_dealer_metrics_monthly(month);
     """)
     conn.commit()
+    # Add new columns to existing DBs (safe to run repeatedly)
+    new_cols = [
+        ("market_context", "nonresidential_construction_spending", "REAL"),
+        ("market_context", "nonresidential_construction_employment", "REAL"),
+        ("market_context", "hotel_motel_employment", "REAL"),
+        ("market_context", "nr_spend_vs_baseline", "REAL"),
+        ("market_context", "hotel_emp_vs_baseline", "REAL"),
+        ("market_context", "nonres_const_emp_vs_baseline", "REAL"),
+        ("market_context", "commercial_opportunity_index", "REAL"),
+        ("market_context", "nr_spend_yoy_pct", "REAL"),
+        ("market_sizing_snapshots", "commercial_opportunity_index", "REAL"),
+        ("market_sizing_snapshots", "nr_spend_vs_baseline", "REAL"),
+        ("market_sizing_snapshots", "hotel_emp_vs_baseline", "REAL"),
+    ]
+    for tbl, col, typ in new_cols:
+        try:
+            conn.execute(f"ALTER TABLE {tbl} ADD COLUMN {col} {typ}")
+        except Exception:
+            pass
+    conn.commit()
     log.info("Schema initialized (8 tables)")
 
 
