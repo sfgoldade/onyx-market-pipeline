@@ -51,23 +51,31 @@ def init_schema(conn: sqlite3.Connection) -> None:
         );
 
         CREATE TABLE IF NOT EXISTS market_context (
-            id                          INTEGER PRIMARY KEY AUTOINCREMENT,
-            date                        DATE    NOT NULL UNIQUE,
-            housing_starts              REAL,   -- thousands of units, SA (FRED HOUST)
-            mortgage_rate_30yr          REAL,   -- percent (FRED MORTGAGE30US)
-            home_price_index            REAL,   -- index (FRED CSUSHPISA)
-            construction_spending       REAL,   -- millions $ (FRED TTLCONS)
-            building_materials_ppi      REAL,   -- index (FRED PCU327327)
-            res_construction_employment REAL,   -- thousands (BLS CES2023610001)
-            total_construction_employment REAL, -- thousands (BLS CES2000000001)
-            specialty_trade_employment  REAL,   -- thousands (BLS CES2023800001)
-            starts_health_idx           REAL,   -- derived: 0-100
-            mortgage_affordability_score REAL,  -- derived: 0-100
-            housing_health_index        REAL,   -- derived composite: 0-100
-            remodel_demand_index        REAL,   -- derived: 0-100
-            materials_ppi_yoy_pct       REAL,   -- derived: YoY % change
-            home_price_yoy_pct          REAL,   -- derived: YoY % change
-            loaded_at                   DATETIME DEFAULT CURRENT_TIMESTAMP
+            id                                  INTEGER PRIMARY KEY AUTOINCREMENT,
+            date                                DATE    NOT NULL UNIQUE,
+            housing_starts                      REAL,
+            mortgage_rate_30yr                  REAL,
+            home_price_index                    REAL,
+            construction_spending               REAL,
+            building_materials_ppi              REAL,
+            res_construction_employment         REAL,
+            total_construction_employment       REAL,
+            specialty_trade_employment          REAL,
+            nonresidential_construction_spending    REAL,
+            nonresidential_construction_employment  REAL,
+            hotel_motel_employment              REAL,
+            starts_health_idx                   REAL,
+            mortgage_affordability_score        REAL,
+            housing_health_index                REAL,
+            remodel_demand_index                REAL,
+            materials_ppi_yoy_pct               REAL,
+            home_price_yoy_pct                  REAL,
+            nr_spend_vs_baseline                REAL,
+            hotel_emp_vs_baseline               REAL,
+            nonres_const_emp_vs_baseline        REAL,
+            commercial_opportunity_index        REAL,
+            nr_spend_yoy_pct                    REAL,
+            loaded_at                           DATETIME DEFAULT CURRENT_TIMESTAMP
         );
 
         CREATE TABLE IF NOT EXISTS market_sizing_snapshots (
