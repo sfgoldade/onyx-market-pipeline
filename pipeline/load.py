@@ -79,21 +79,24 @@ def init_schema(conn: sqlite3.Connection) -> None:
         );
 
         CREATE TABLE IF NOT EXISTS market_sizing_snapshots (
-            id                      INTEGER PRIMARY KEY AUTOINCREMENT,
-            snapshot_date           DATE    NOT NULL,
-            tam_b                   REAL,   -- Total addressable market, $B
-            sam_b                   REAL,   -- Serviceable addressable market, $B
-            som_m                   REAL,   -- Serviceable obtainable market, $M
-            onyx_rev_est_mid_m      REAL,   -- Onyx revenue midpoint estimate
-            onyx_rev_est_lo_m       REAL,
-            onyx_rev_est_hi_m       REAL,
-            onyx_share_of_sam_pct   REAL,   -- Onyx estimated share of SAM
-            housing_starts_latest   REAL,
-            mortgage_rate_latest    REAL,
-            housing_health_index    REAL,
-            remodel_demand_index    REAL,
-            data_sources            TEXT,
-            created_at              DATETIME DEFAULT CURRENT_TIMESTAMP
+            id                          INTEGER PRIMARY KEY AUTOINCREMENT,
+            snapshot_date               DATE    NOT NULL,
+            tam_b                       REAL,
+            sam_b                       REAL,
+            som_m                       REAL,
+            onyx_rev_est_mid_m          REAL,
+            onyx_rev_est_lo_m           REAL,
+            onyx_rev_est_hi_m           REAL,
+            onyx_share_of_sam_pct       REAL,
+            housing_starts_latest       REAL,
+            mortgage_rate_latest        REAL,
+            housing_health_index        REAL,
+            remodel_demand_index        REAL,
+            commercial_opportunity_index REAL,
+            nr_spend_vs_baseline        REAL,
+            hotel_emp_vs_baseline       REAL,
+            data_sources                TEXT,
+            created_at                  DATETIME DEFAULT CURRENT_TIMESTAMP
         );
 
         CREATE TABLE IF NOT EXISTS pipeline_runs (
