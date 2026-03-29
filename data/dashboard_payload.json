@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-03-22T06:40:29.765565Z",
+  "generated_at": "2026-03-29T06:54:53.599685Z",
   "data_as_of": "2026-01-01",
   "market_sizing": {
     "tam_b": 33.87,
@@ -412,8 +412,8 @@
       "health_index": 66.2,
       "remodel_index": 74.3,
       "home_price_yoy": null,
-      "commercial_index": 70.0,
-      "nr_spend_baseline_pct": null,
+      "commercial_index": 100.0,
+      "nr_spend_baseline_pct": 140.0,
       "hotel_emp_baseline_pct": 118.2
     }
   ],
