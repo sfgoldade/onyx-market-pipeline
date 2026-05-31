@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-24T08:19:21.001209Z",
+  "generated_at": "2026-05-31T08:35:39.230653Z",
   "data_as_of": "2026-04-01",
   "market_sizing": {
     "tam_b": 34.5,
@@ -59,7 +59,7 @@
       "mortgage_rate": 7.18,
       "health_index": 53.5,
       "remodel_index": 84.8,
-      "home_price_yoy": 2.68,
+      "home_price_yoy": 2.69,
       "commercial_index": 80.0,
       "nr_spend_baseline_pct": 140.0,
       "hotel_emp_baseline_pct": null
@@ -70,7 +70,7 @@
       "mortgage_rate": 7.31,
       "health_index": 53.8,
       "remodel_index": 84.7,
-      "home_price_yoy": 4.07,
+      "home_price_yoy": 4.08,
       "commercial_index": 80.0,
       "nr_spend_baseline_pct": 140.0,
       "hotel_emp_baseline_pct": null
@@ -81,7 +81,7 @@
       "mortgage_rate": 7.79,
       "health_index": 50.8,
       "remodel_index": 87.7,
-      "home_price_yoy": 4.84,
+      "home_price_yoy": 4.85,
       "commercial_index": 80.0,
       "nr_spend_baseline_pct": 140.0,
       "hotel_emp_baseline_pct": null
@@ -114,7 +114,7 @@
       "mortgage_rate": 6.69,
       "health_index": 58.4,
       "remodel_index": 80.4,
-      "home_price_yoy": 6.23,
+      "home_price_yoy": 6.22,
       "commercial_index": 100.0,
       "nr_spend_baseline_pct": 140.0,
       "hotel_emp_baseline_pct": 118.4
@@ -125,7 +125,7 @@
       "mortgage_rate": 6.94,
       "health_index": 61.4,
       "remodel_index": 79.6,
-      "home_price_yoy": 6.56,
+      "home_price_yoy": 6.53,
       "commercial_index": 100.0,
       "nr_spend_baseline_pct": 140.0,
       "hotel_emp_baseline_pct": 118.7
@@ -136,7 +136,7 @@
       "mortgage_rate": 6.79,
       "health_index": 55.6,
       "remodel_index": 82.7,
-      "home_price_yoy": 6.5,
+      "home_price_yoy": 6.52,
       "commercial_index": 100.0,
       "nr_spend_baseline_pct": 140.0,
       "hotel_emp_baseline_pct": 118.7
@@ -147,7 +147,7 @@
       "mortgage_rate": 7.17,
       "health_index": 58.6,
       "remodel_index": 83.6,
-      "home_price_yoy": 6.34,
+      "home_price_yoy": 6.35,
       "commercial_index": 100.0,
       "nr_spend_baseline_pct": 140.0,
       "hotel_emp_baseline_pct": 118.7
@@ -191,7 +191,7 @@
       "mortgage_rate": 6.35,
       "health_index": 61.6,
       "remodel_index": 77.8,
-      "home_price_yoy": 4.3,
+      "home_price_yoy": 4.31,
       "commercial_index": 100.0,
       "nr_spend_baseline_pct": 140.0,
       "hotel_emp_baseline_pct": 117.2
@@ -213,7 +213,7 @@
       "mortgage_rate": 6.72,
       "health_index": 60.4,
       "remodel_index": 80.7,
-      "home_price_yoy": 3.59,
+      "home_price_yoy": 3.6,
       "commercial_index": 100.0,
       "nr_spend_baseline_pct": 140.0,
       "hotel_emp_baseline_pct": 118.6
@@ -224,7 +224,7 @@
       "mortgage_rate": 6.81,
       "health_index": 55.3,
       "remodel_index": 82.7,
-      "home_price_yoy": 3.76,
+      "home_price_yoy": 3.77,
       "commercial_index": 100.0,
       "nr_spend_baseline_pct": 140.0,
       "hotel_emp_baseline_pct": 118.9
@@ -235,7 +235,7 @@
       "mortgage_rate": 6.85,
       "health_index": 59.6,
       "remodel_index": 79.1,
-      "home_price_yoy": 4.03,
+      "home_price_yoy": 4.04,
       "commercial_index": 100.0,
       "nr_spend_baseline_pct": 140.0,
       "hotel_emp_baseline_pct": 119.3
@@ -246,7 +246,7 @@
       "mortgage_rate": 6.95,
       "health_index": 55.1,
       "remodel_index": 82.6,
-      "home_price_yoy": 4.18,
+      "home_price_yoy": 4.17,
       "commercial_index": 100.0,
       "nr_spend_baseline_pct": 140.0,
       "hotel_emp_baseline_pct": 119.3
@@ -257,7 +257,7 @@
       "mortgage_rate": 6.76,
       "health_index": 59.5,
       "remodel_index": 78.6,
-      "home_price_yoy": 3.99,
+      "home_price_yoy": 3.96,
       "commercial_index": 100.0,
       "nr_spend_baseline_pct": 140.0,
       "hotel_emp_baseline_pct": 118.9
@@ -268,7 +268,7 @@
       "mortgage_rate": 6.65,
       "health_index": 56.9,
       "remodel_index": 80.7,
-      "home_price_yoy": 3.42,
+      "home_price_yoy": 3.43,
       "commercial_index": 100.0,
       "nr_spend_baseline_pct": 140.0,
       "hotel_emp_baseline_pct": 119.3
@@ -356,7 +356,7 @@
       "mortgage_rate": 6.23,
       "health_index": 62.6,
       "remodel_index": 78.5,
-      "home_price_yoy": 1.28,
+      "home_price_yoy": 1.29,
       "commercial_index": 100.0,
       "nr_spend_baseline_pct": 140.0,
       "hotel_emp_baseline_pct": 118.0
@@ -378,7 +378,7 @@
       "mortgage_rate": 6.1,
       "health_index": 63.3,
       "remodel_index": 76.3,
-      "home_price_yoy": 0.83,
+      "home_price_yoy": 0.87,
       "commercial_index": 100.0,
       "nr_spend_baseline_pct": 140.0,
       "hotel_emp_baseline_pct": 118.4
@@ -389,7 +389,7 @@
       "mortgage_rate": 5.98,
       "health_index": 61.8,
       "remodel_index": 76.3,
-      "home_price_yoy": 0.66,
+      "home_price_yoy": 0.74,
       "commercial_index": 100.0,
       "nr_spend_baseline_pct": 140.0,
       "hotel_emp_baseline_pct": 117.9
@@ -400,7 +400,7 @@
       "mortgage_rate": 6.38,
       "health_index": 65.3,
       "remodel_index": 75.9,
-      "home_price_yoy": null,
+      "home_price_yoy": 0.66,
       "commercial_index": 100.0,
       "nr_spend_baseline_pct": 140.0,
       "hotel_emp_baseline_pct": 118.7
