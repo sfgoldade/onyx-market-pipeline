@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-31T08:35:39.230653Z",
+  "generated_at": "2026-06-07T08:46:28.271032Z",
   "data_as_of": "2026-04-01",
   "market_sizing": {
     "tam_b": 34.5,
@@ -17,7 +17,7 @@
     "remodel_demand_index": 76.0,
     "commercial_opportunity_index": 50.0,
     "nr_spend_vs_baseline": 140.0,
-    "hotel_emp_vs_baseline": 117.7
+    "hotel_emp_vs_baseline": 119.0
   },
   "housing_trend": [
     {
@@ -398,12 +398,12 @@
       "date": "2026-03",
       "housing_starts": 1507.0,
       "mortgage_rate": 6.38,
-      "health_index": 65.3,
+      "health_index": 64.9,
       "remodel_index": 75.9,
       "home_price_yoy": 0.66,
       "commercial_index": 100.0,
       "nr_spend_baseline_pct": 140.0,
-      "hotel_emp_baseline_pct": 118.7
+      "hotel_emp_baseline_pct": 118.8
     },
     {
       "date": "2026-04",
@@ -412,9 +412,9 @@
       "health_index": 63.4,
       "remodel_index": 76.0,
       "home_price_yoy": null,
-      "commercial_index": 70.0,
-      "nr_spend_baseline_pct": null,
-      "hotel_emp_baseline_pct": 117.7
+      "commercial_index": 100.0,
+      "nr_spend_baseline_pct": 140.0,
+      "hotel_emp_baseline_pct": 118.4
     }
   ],
   "sources": {
