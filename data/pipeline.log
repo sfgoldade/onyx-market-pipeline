@@ -644,3 +644,37 @@
 2026-07-19 08:01:37  INFO      Load complete: 990 raw rows | 91 context rows | 6 FRED + 5 BLS series | status=success
 2026-07-19 08:01:37  INFO      Pipeline SUCCESS — 3.4s
 2026-07-19 08:01:37  INFO      ============================================================
+2026-07-26 08:10:30  INFO      ============================================================
+2026-07-26 08:10:30  INFO      Onyx Collection Market Pipeline — 2026-07-26T08:10:30.000978Z
+2026-07-26 08:10:30  INFO      ============================================================
+2026-07-26 08:10:30  INFO      EXTRACT — fetching FRED series...
+2026-07-26 08:10:30  INFO        FRED HOUST          (housing_starts):  90 rows | latest 2026-06-01 = 1427.00
+2026-07-26 08:10:30  INFO        FRED MORTGAGE30US   (mortgage_rate_30yr): 395 rows | latest 2026-07-23 = 6.58
+2026-07-26 08:10:30  INFO        FRED CSUSHPISA      (home_price_index):  88 rows | latest 2026-04-01 = 330.87
+2026-07-26 08:10:30  INFO        FRED TTLCONS        (construction_spending):  89 rows | latest 2026-05-01 = 2210214.00
+2026-07-26 08:10:31  INFO        FRED PCU327327      (building_materials_ppi):  90 rows | latest 2026-06-01 = 314.87
+2026-07-26 08:10:31  INFO        FRED TLNRESCONS     (nonresidential_construction_spending):  89 rows | latest 2026-05-01 = 1267435.00
+2026-07-26 08:10:31  INFO        FRED complete: 841 rows across 6 series
+2026-07-26 08:10:31  INFO      EXTRACT — fetching BLS series...
+2026-07-26 08:10:32  INFO        BLS  CES2023610001  (residential_construction_employment):  30 rows | latest 2026-06-01 = 916.2k
+2026-07-26 08:10:32  INFO        BLS  CES2000000001  (total_construction_employment):  30 rows | latest 2026-06-01 = 8331.0k
+2026-07-26 08:10:33  INFO        BLS  CES2023800001  (specialty_trade_employment):  30 rows | latest 2026-06-01 = 5261.6k
+2026-07-26 08:10:33  INFO        BLS  CES2023620001  (nonresidential_construction_employment):  30 rows | latest 2026-06-01 = 947.9k
+2026-07-26 08:10:34  INFO        BLS  CES7072100001  (hotel_motel_employment):  30 rows | latest 2026-06-01 = 1913.8k
+2026-07-26 08:10:34  INFO        BLS complete:  150 rows across 5 series
+2026-07-26 08:10:34  INFO      EXTRACT done — 991 total rows | date range 2019-01-01 → 2026-07-23
+2026-07-26 08:10:34  INFO      TRANSFORM — running market context calculations...
+2026-07-26 08:10:34  INFO      Pivoting raw data to wide format...
+2026-07-26 08:10:34  INFO        Wide table: 91 months × 11 series
+2026-07-26 08:10:34  INFO      Computing market context metrics...
+2026-07-26 08:10:34  INFO        Context table: 91 rows, 2019-01-01 → 2026-07-01
+2026-07-26 08:10:34  INFO      Computing market sizing...
+2026-07-26 08:10:34  INFO        TAM $34.93B | SAM $4.80B | Housing health 56/100 | Remodel demand 78/100 | Commercial index 50/100
+2026-07-26 08:10:34  INFO      Building dashboard payload...
+2026-07-26 08:10:34  INFO        Payload: 36 months of trend data
+2026-07-26 08:10:34  INFO      LOAD — writing to SQLite and JSON...
+2026-07-26 08:10:34  INFO      Schema initialized (8 tables)
+2026-07-26 08:10:34  INFO      JSON payload written → /home/runner/work/onyx-market-pipeline/onyx-market-pipeline/data/dashboard_payload.json (12.1 KB)
+2026-07-26 08:10:34  INFO      Load complete: 991 raw rows | 91 context rows | 6 FRED + 5 BLS series | status=success
+2026-07-26 08:10:34  INFO      Pipeline SUCCESS — 4.4s
+2026-07-26 08:10:34  INFO      ============================================================
