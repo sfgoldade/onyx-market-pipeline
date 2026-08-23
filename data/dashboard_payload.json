@@ -1,36 +1,25 @@
 {
-  "generated_at": "2026-08-16T06:24:25.009219Z",
-  "data_as_of": "2026-06-01",
+  "generated_at": "2026-08-23T06:25:19.946901Z",
+  "data_as_of": "2026-07-01",
   "market_sizing": {
-    "tam_b": 34.93,
-    "sam_b": 4.8,
-    "som_m": 86.5,
+    "tam_b": 35.15,
+    "sam_b": 4.82,
+    "som_m": 86.8,
     "onyx_rev_est_mid_m": 63.0,
     "onyx_rev_est_lo_m": 50.0,
     "onyx_rev_est_hi_m": 75.0,
-    "onyx_share_pct": 1.311
+    "onyx_share_pct": 1.306
   },
   "live_indicators": {
-    "housing_starts": 1427.0,
-    "mortgage_rate": 6.49,
-    "housing_health_index": 55.8,
-    "remodel_demand_index": 78.1,
+    "housing_starts": 1239.0,
+    "mortgage_rate": 6.66,
+    "housing_health_index": 50.4,
+    "remodel_demand_index": 83.0,
     "commercial_opportunity_index": 50.0,
     "nr_spend_vs_baseline": 140.0,
     "hotel_emp_vs_baseline": 117.8
   },
   "housing_trend": [
-    {
-      "date": "2023-07",
-      "housing_starts": 1464.0,
-      "mortgage_rate": 6.81,
-      "health_index": 59.9,
-      "remodel_index": 79.5,
-      "home_price_yoy": 1.05,
-      "commercial_index": 80.0,
-      "nr_spend_baseline_pct": 140.0,
-      "hotel_emp_baseline_pct": null
-    },
     {
       "date": "2023-08",
       "housing_starts": 1321.0,
@@ -396,10 +385,10 @@
     },
     {
       "date": "2026-05",
-      "housing_starts": 1199.0,
+      "housing_starts": 1182.0,
       "mortgage_rate": 6.53,
-      "health_index": 51.2,
-      "remodel_index": 82.9,
+      "health_index": 50.8,
+      "remodel_index": 83.2,
       "home_price_yoy": 1.1,
       "commercial_index": 100.0,
       "nr_spend_baseline_pct": 140.0,
@@ -407,14 +396,25 @@
     },
     {
       "date": "2026-06",
-      "housing_starts": 1427.0,
+      "housing_starts": 1415.0,
       "mortgage_rate": 6.49,
-      "health_index": 55.8,
-      "remodel_index": 78.1,
+      "health_index": 55.5,
+      "remodel_index": 78.3,
       "home_price_yoy": null,
       "commercial_index": 100.0,
       "nr_spend_baseline_pct": 140.0,
       "hotel_emp_baseline_pct": 117.6
+    },
+    {
+      "date": "2026-07",
+      "housing_starts": 1239.0,
+      "mortgage_rate": 6.66,
+      "health_index": 50.4,
+      "remodel_index": 83.0,
+      "home_price_yoy": null,
+      "commercial_index": 70.0,
+      "nr_spend_baseline_pct": null,
+      "hotel_emp_baseline_pct": 117.8
     }
   ],
   "sources": {
