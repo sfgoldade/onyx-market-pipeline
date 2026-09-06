@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-30T10:57:04.606086Z",
+  "generated_at": "2026-09-06T09:57:30.208788Z",
   "data_as_of": "2026-07-01",
   "market_sizing": {
     "tam_b": 35.15,
@@ -13,11 +13,11 @@
   "live_indicators": {
     "housing_starts": 1239.0,
     "mortgage_rate": 6.66,
-    "housing_health_index": 50.4,
+    "housing_health_index": 51.2,
     "remodel_demand_index": 83.0,
     "commercial_opportunity_index": 50.0,
     "nr_spend_vs_baseline": 140.0,
-    "hotel_emp_vs_baseline": 117.8
+    "hotel_emp_vs_baseline": 118.2
   },
   "housing_trend": [
     {
@@ -398,7 +398,7 @@
       "date": "2026-06",
       "housing_starts": 1415.0,
       "mortgage_rate": 6.49,
-      "health_index": 55.5,
+      "health_index": 55.9,
       "remodel_index": 78.3,
       "home_price_yoy": 1.52,
       "commercial_index": 100.0,
@@ -409,12 +409,12 @@
       "date": "2026-07",
       "housing_starts": 1239.0,
       "mortgage_rate": 6.66,
-      "health_index": 50.4,
+      "health_index": 51.2,
       "remodel_index": 83.0,
       "home_price_yoy": null,
-      "commercial_index": 70.0,
-      "nr_spend_baseline_pct": null,
-      "hotel_emp_baseline_pct": 117.8
+      "commercial_index": 100.0,
+      "nr_spend_baseline_pct": 140.0,
+      "hotel_emp_baseline_pct": 117.7
     }
   ],
   "sources": {
